@@ -1,0 +1,7 @@
+{
+    "presets": [
+      ["@babel/preset-env", { "targets": { "node": "current" } }]
+    ],
+    "sourceMaps": "inline", // add vscode babel debugging
+    "retainLines": true // same as above
+}
