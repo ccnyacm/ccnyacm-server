@@ -3,6 +3,7 @@ const functions = require('firebase-functions'),
     cors = require('cors'),
     bodyParser = require('body-parser'),
     info = require('./controllers/info');
+    events = require('./controllers/events');
 
 //initialized app
 const app = Express();
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //add routes
 app.use('/info', info);
+app.use('/events', events);
 
 // // Create and Deploy Your First Cloud Functions
 
