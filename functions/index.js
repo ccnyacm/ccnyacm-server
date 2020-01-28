@@ -3,8 +3,9 @@ const functions = require('firebase-functions'),
     cors = require('cors'),
     bodyParser = require('body-parser'),
     info = require('./controllers/info');
-    events = require('./controllers/events');
-
+    events = require('./controllers/events')
+    members = require('./controllers/members');
+    
 //initialized app
 const app = Express();
 
@@ -17,7 +18,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //add routes
 app.use('/info', info);
 app.use('/events', events);
+app.use('/members', members);
 
-// // Create and Deploy Your First Cloud Functions
-
-exports.ccnyacm = functions.https.onRequest(app);
+app.listen(process.env.PORT || 8081, () => console.log('Server is connected'))
